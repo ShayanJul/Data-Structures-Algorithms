@@ -135,6 +135,23 @@ class DoublyLinkedList:
             self.length += 1
         return True
 
+    def remove(self, index):
+        """This removes an item from a specific index
+        """
+        if index < 0 or index >= self.length:
+            return None
+        if index == 0:
+            return self.pop_first()
+        if index == self.length - 1:
+            return self.pop()
+        else:
+            prev = self.get(index - 1)
+            temp = prev.next
+            prev.next = temp.next
+            temp.next = None
+            self.length -= 1
+            return temp
+
 
 my_doubly_list = DoublyLinkedList(7)
 print('My list is:')
@@ -177,5 +194,10 @@ my_doubly_list.print_list()
 
 print('Insert 12 after second item')
 my_doubly_list.insert(2, 12)
+print('My list is:')
+my_doubly_list.print_list()
+
+print('Let\'s remove the second item')
+my_doubly_list.remove(1)
 print('My list is:')
 my_doubly_list.print_list()
