@@ -15,5 +15,4 @@ def insertion_sort(my_list):
     return my_list
 
 
-unsorted_list = [5, -2, 8, 0, -1, 6]
-print(insertion_sort(unsorted_list))
+prisssnt(insertion_sort(unsorted_list))
